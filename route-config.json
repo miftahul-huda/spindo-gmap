@@ -1,0 +1,3 @@
+[
+    { "path" :  "/samples", "router"  : "./routes/samples", "logic" : "./modules/logic/sample_logic" }
+]
