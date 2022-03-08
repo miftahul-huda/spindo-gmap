@@ -1,21 +1,28 @@
-var express = require('express');
-var router = express.Router();
-const path = require('path');
+const CrudRouter = require("./crudrouter");
 
-const fs = require('fs');
-const https = require('https');
+class WebRouter {
 
+    static getConfig()
+    {
+        return {};
+    }
 
+    static getRouter(logic)
+    {
+        var express = require('express');
+        const path = require('path');
+        var router = express.Router();
+        router.logic = logic;
+        let me = this;
 
-router.get('web/index', function (req, res){
+        router.get('', (req, res)=>{
+            var dir = __dirname;
+            var p = path.resolve( dir, "../public/pages/", "index");
+            res.render(p, { config: me.getConfig() } )
+        });
 
+        return router;
+    }
+}
 
-    var dir = __dirname;
-    var p = path.resolve( dir, "../public/pages/", "index");
-    res.render(p, { config: getConfig() } )
-
-
-})
-
-
-module.exports = router;
+module.exports = WebRouter;

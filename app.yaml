@@ -1,4 +1,4 @@
-service: <appid>
+service: gmap
 runtime: nodejs12
 env: standard
 env_variables:
@@ -7,8 +7,8 @@ env_variables:
   DBUSER: "<dbuser>"
   DBPASSWORD: "<dbpassword>"
   DBENGINE: "postgresql"
-  APPLICATION_NAME : "<appname>"
-  APPLICATION_TITLE : "<apptitle>"
+  APPLICATION_NAME : "GMAP"
+  APPLICATION_TITLE : "GMAP"
   APPLICATION_PORT : "8080"
-  PROJECT : "<project>"
+  PROJECT : "dvt-apac-playground-3"
 

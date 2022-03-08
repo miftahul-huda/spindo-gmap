@@ -1,3 +1,5 @@
 [
-    { "path" :  "/samples", "router"  : "./routes/samples", "logic" : "./modules/logic/sample_logic" }
+    { "path" :  "/sample", "router"  : "./routes/sample", "logic" : "./modules/logic/sample_logic" },
+    { "path" :  "", "router"  : "./routes/web" },
+    { "path" :  "/gmap", "router"  : "./routes/gmap",  "logic" : "./modules/logic/gmap_logic"}
 ]

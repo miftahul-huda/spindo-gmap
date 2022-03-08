@@ -14,7 +14,7 @@ class Initialization {
     static async initializeDatabase(){
 
         let force = false;
-        await sequelize.sync();
+        //await sequelize.sync();
     }
 }
 
