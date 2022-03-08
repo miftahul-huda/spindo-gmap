@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<%- include ("./headerscript.html") -%>
+
+</head>
+<body>
+    <div class="card-body">
+        <div style="margin-left: 40%; margin-top: 10%;">
+            <div style="display: flex;">
+                <label>
+                    Password
+                </label>
+                <div style="width: 30px">
+    
+                </div>
+                <div>
+                    <input type="password" id="password" size="20"/>
+                </div>
+            </div>
+            <div style="height: 10px">
+
+            </div>
+            <div style="display: flex; width: 300px">
+                <button class="btn btn-block btn-primary" id="btn-login">Login</button>
+            </div>
+
+        </div>
+        
+        
+    </div>
+    <%- include ("./footer.html") -%>
+</body>
+<script>
+$(document).ready(function(){
+    $("#btn-login").on("click",function(){
+        let url = "/login/" + $("#password").val();
+        $.get(url, function(response){
+            if(response.result)
+            {
+                location = "/";
+            }
+            else
+            {
+                alert("Invalid password")
+            }
+        })
+    })
+});
+</script>
+</html>

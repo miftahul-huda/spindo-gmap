@@ -9,9 +9,9 @@ class GmapLogic {
 
             let url = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?";
         
-
+            let key = process.env.KEY;
             let parameters = "input=" + encodeURIComponent(keyword);
-            parameters += "&&inputtype=textquery&fields=formatted_address%2Cname%2Crating%2Copening_hours%2Cgeometry&key=AIzaSyDKkcSpolmBxRxvDYU1sGhZrvfVBSJ4c9M";
+            parameters += "&&inputtype=textquery&fields=formatted_address%2Cname%2Crating%2Copening_hours%2Cgeometry&key=" + key;
     
             url += parameters;
             console.log(url);
@@ -46,8 +46,10 @@ class GmapLogic {
             let url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?";
             //radius = radius * 1000;
 
+            let key = process.env.KEY;
+
             let parameters = "location=" + encodeURIComponent(lat) + "%2C" + encodeURIComponent(lng) + "&keyword=" + encodeURIComponent(keyword);
-            parameters += "&radius=" + encodeURIComponent(radius) + "&key=AIzaSyDKkcSpolmBxRxvDYU1sGhZrvfVBSJ4c9M";
+            parameters += "&radius=" + encodeURIComponent(radius) + "&key=" + key;
 
             url += parameters;
             console.log(url);
